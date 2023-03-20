@@ -15,6 +15,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
             nav_reward_scale: float | int,
             attack_reward: float | int,
             success_reward: float | int,
+            image_size: tuple[int, int] = (160, 256),
     ):
         max_spawn_range = 10
         distance_to_axis = int(max_spawn_range / np.sqrt(2))
@@ -37,7 +38,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
             initial_mobs=["cow", "pig", "sheep"],
             initial_mob_spawn_range_low=spawn_range_low,
             initial_mob_spawn_range_high=spawn_range_high,
-            image_size=(160, 256),
+            image_size=image_size,
             world_seed=123,
             specified_biome="sunflower_plains",
             fast_reset=False,
