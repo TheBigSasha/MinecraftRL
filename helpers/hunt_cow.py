@@ -41,7 +41,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
             image_size=image_size,
             world_seed=123,
             specified_biome="sunflower_plains",
-            fast_reset=False,
+            fast_reset=True,
             fast_reset_random_teleport_range=1000,
             use_voxel=True,
             use_lidar=True,
