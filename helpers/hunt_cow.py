@@ -15,7 +15,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
             nav_reward_scale: float | int,
             attack_reward: float | int,
             success_reward: float | int,
-            image_size: tuple[int, int] = (160, 256),
+            image_size: tuple[int, int],
     ):
         max_spawn_range = 10
         distance_to_axis = int(max_spawn_range / np.sqrt(2))
