@@ -414,7 +414,7 @@ class ActorCritic(nn.Module):
                 nn.init.uniform_(m.bias, -0.1, 0.1)
 
     def forward(self, state):
-        if state.shape != (1, 1, 41140):
+        if state.shape != (1, 1, 41140) and state.shape != (1, 41140):
             print(f"Wrong state shape: {state.shape}")
             state = torch.zeros(41140).to(self.device)
         state = state.view(self.C, self.H, self.W)  # Reshape the input to (batch_size, C, H, W)
