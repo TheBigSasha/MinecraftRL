@@ -370,40 +370,29 @@ class ActorCritic(nn.Module):
         self.actor_branches = nn.ModuleList().to(self.device)
         for action_dim in action_dims:
             self.actor_branches.append(nn.Sequential(
-                nn.Conv2d(self.C, 32, kernel_size=3, stride=1, padding=1),
-                nn.ReLU(),
-                nn.MaxPool2d(kernel_size=2, stride=2),
-                nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
-                nn.ReLU(),
-                nn.MaxPool2d(kernel_size=2, stride=2),
+                nn.Conv2d(self.C, 64, kernel_size=3, stride=1, padding=1),
                 nn.ReLU(),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
+                nn.ReLU(),
+                nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(128, 1, kernel_size=3, stride=1, padding=1),
                 nn.Flatten(),
-                nn.Flatten(),
-                nn.Linear(621, 256),
-                nn.ReLU(),
-                nn.Linear(256, action_dim),
+                nn.Linear(621, action_dim),
                 # dimension is now (128, action_dim). We want to have (action_dim).print
             ).to(self.device))
 
         self.critic = nn.Sequential(
-            nn.Conv2d(self.C, 32, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(self.C, 16, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(128, 1, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(32, 1, kernel_size=3, stride=1, padding=1),
             nn.MaxPool2d(kernel_size=2, stride=2),
             nn.Flatten(),
-            nn.Flatten(),
-            nn.Linear(621, 256),
-            nn.ReLU(),
-            nn.Linear(256, 1)
+            nn.Linear(621, 1)
         ).to(self.device)
 
         self.optimizer = optim.Adam(self.parameters(), lr=0.001)
