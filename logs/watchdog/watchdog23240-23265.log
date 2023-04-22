@@ -1,0 +1,2 @@
+2023-04-21 22:37:46 Sashas-MacBook-Pro.local watchdog[23301] INFO Watchdog started between parent 23240 and child 23265
+2023-04-21 22:40:11 Sashas-MacBook-Pro.local watchdog[23301] INFO Parent is not running, hence we need terminate the child.

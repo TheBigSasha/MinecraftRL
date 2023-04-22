@@ -1,0 +1,293 @@
+[22:41:49] [EnvServerSocketHandler/INFO]: [STDOUT]: Received from localhost:<MissionInit xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="" PlatformVersion="0.37.0">
+    <Mission xmlns="http://ProjectMalmo.microsoft.com">
+        <About>
+            <Summary>CombatMeta</Summary>
+        </About>
+
+        <ModSettings>
+            <MsPerTick>50</MsPerTick>
+        </ModSettings>
+
+        <ServerSection>
+            <ServerInitialConditions>
+                <!-- Initial Conditions -->
+
+                
+                <Time>
+                   
+                   <StartTime>13000</StartTime>
+                   
+                   <AllowPassageOfTime>true</AllowPassageOfTime>
+                </Time>
+
+                
+                <AllowSpawning>true</AllowSpawning>
+
+                
+
+            </ServerInitialConditions>
+            <ServerHandlers>
+
+                
+                <BiomeGenerator forceReset="true" seed="123" biome="129"/>
+
+                
+
+                
+
+                
+
+
+            </ServerHandlers>
+        </ServerSection>
+
+
+        
+        <AgentSection mode="Survival">
+            <Name>MineDojoAgent0</Name>
+
+            <AgentStart>
+
+                
+                <LowLevelInputs>true</LowLevelInputs>
+
+                
+                <BreakSpeedMultiplier>1.0</BreakSpeedMultiplier>
+
+                
+                <StartingHealth maxHealth="20" health="20.0"/>
+
+                
+                <StartingFood food="20"/>
+
+                
+                <Inventory>
+            
+                <InventoryObject slot="0" type="diamond_sword" metadata="0" quantity="1"/>
+            
+            </Inventory>
+
+                
+
+            </AgentStart>
+            <AgentHandlers>
+                <!-- These area  bit of boilerplate that
+                 we always expect to be included ... -->
+                <FileBasedPerformanceProducer/>
+                <ObservationFromDamage/>
+                <PauseCommand/>
+
+                <!--  Observations     -->
+
+                
+                <VideoProducer want_depth="false">
+                <Width>256 </Width>
+                <Height>160</Height>
+            </VideoProducer>
+
+                
+                <ObservationFromFullInventory flat="false"/>
+
+                
+                <ObservationFromFullStats/>
+
+                
+                <ObservationFromGrid>                      
+                <Grid name="voxels">                        
+                    <min x="-1" y="-1" z="-1"/>                        
+                    <max x="1" y="1" z="1"/>                      
+                </Grid>                  
+            </ObservationFromGrid>
+
+                
+                <ObservationFromRichLidar>
+                
+                    <RayOffset pitch="0.0" yaw="-1.0471975511965976" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="-0.7853981633974483" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="-0.5235987755982988" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="-0.2617993877991494" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="0.0" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="0.2617993877991494" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="0.5235987755982988" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="0.7853981633974483" distance="9999"/>
+                
+                    <RayOffset pitch="0.0" yaw="1.0471975511965976" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="-1.0471975511965976" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="-0.7853981633974483" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="-0.5235987755982988" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="-0.2617993877991494" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="0.0" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="0.2617993877991494" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="0.5235987755982988" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="0.7853981633974483" distance="9999"/>
+                
+                    <RayOffset pitch="0.2617993877991494" yaw="1.0471975511965976" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="-1.0471975511965976" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="-0.7853981633974483" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="-0.5235987755982988" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="-0.2617993877991494" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="0.0" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="0.2617993877991494" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="0.5235987755982988" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="0.7853981633974483" distance="9999"/>
+                
+                    <RayOffset pitch="0.5235987755982988" yaw="1.0471975511965976" distance="9999"/>
+                
+            </ObservationFromRichLidar>
+
+                
+
+                <!--  Monitors     -->
+
+                <!--  Actions   -->
+                <ChatCommands/>
+
+                
+                <CameraCommands/>
+
+                
+                <NearbySmeltCommands/>
+
+                
+                <SimpleCraftCommands/>
+
+                
+                <NearbyCraftCommands/>
+
+                
+                <HumanLevelCommands/>
+
+                
+                <EquipCommands/>
+
+                
+                <PlaceCommands/>
+
+                
+
+                <!--  Rewards   -->
+
+                <!-- Additional Agent Handlers like quitting -->
+                
+
+                <!-- Env Monitors? -->
+            </AgentHandlers>
+        </AgentSection>
+        
+    </Mission>
+    <ExperimentUID>
+        e782deea-a2f6-4ca5-9288-ac1875f8e3b0
+    </ExperimentUID>
+    <ClientRole>
+        0
+    </ClientRole>
+    <ClientAgentConnection>
+        <ClientIPAddress>127.0.0.1</ClientIPAddress>
+        <ClientMissionControlPort>0</ClientMissionControlPort>
+        <ClientCommandsPort>0</ClientCommandsPort>
+        <AgentIPAddress>127.0.0.1</AgentIPAddress>
+        <AgentMissionControlPort>0</AgentMissionControlPort>
+        <AgentVideoPort>0</AgentVideoPort>
+        <AgentDepthPort>0</AgentDepthPort>
+        <AgentLuminancePort>0</AgentLuminancePort>
+        <AgentObservationsPort>0</AgentObservationsPort>
+        <AgentRewardsPort>0</AgentRewardsPort>
+        <AgentColourMapPort>0</AgentColourMapPort>
+    </ClientAgentConnection>
+</MissionInit>
+[22:41:50] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[22:41:50] [EnvServerSocketHandler/INFO]: [STDOUT]: REPLYING WITH: MALMOOK
+[22:41:50] [Client thread/INFO]: [STDOUT]: Mission received: CombatMeta
+[22:41:50] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_HANDLERS
+[22:41:50] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_HANDLERS
+[22:41:51] [Client thread/INFO]: [STDOUT]: Starting command server.
+[22:41:51] [Thread-10/INFO]: [STDOUT]: INFO: ->com(0) Listening for messages on port 10810
+[22:41:51] [Client thread/INFO]: [STDOUT]: CLIENT request state: EVALUATING_WORLD_REQUIREMENTS
+[22:41:51] [Client thread/INFO]: [STDOUT]: CLIENT enter state: EVALUATING_WORLD_REQUIREMENTS
+[22:41:51] [Client thread/INFO]: [STDOUT]: CLIENT request state: CREATING_NEW_WORLD
+[22:41:51] [Client thread/INFO]: [STDOUT]: CLIENT enter state: CREATING_NEW_WORLD
+[22:41:51] [Client thread/INFO]: Mixing MixinWorldProviderSpawn from mixins.overclocking.malmomod.json into net.minecraft.world.WorldProvider
+[22:41:51] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
+[22:41:51] [Server thread/INFO]: Generating keypair
+[22:41:53] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[22:41:53] [Server thread/INFO]: Applying holder lookups
+[22:41:53] [Server thread/INFO]: Holder lookups applied
+[22:41:53] [Server thread/INFO]: Loading dimension 0 (TEMP_0_639a9400-a72c-4f4a-b697-1280180e5c88) (net.minecraft.server.integrated.IntegratedServer@deba6b6)
+[22:41:53] [Server thread/WARN]: Unable to find spawn biome
+[22:41:53] [Server thread/INFO]: Loading dimension 1 (TEMP_0_639a9400-a72c-4f4a-b697-1280180e5c88) (net.minecraft.server.integrated.IntegratedServer@deba6b6)
+[22:41:54] [Server thread/INFO]: Loading dimension -1 (TEMP_0_639a9400-a72c-4f4a-b697-1280180e5c88) (net.minecraft.server.integrated.IntegratedServer@deba6b6)
+[22:41:54] [Server thread/INFO]: Preparing start region for level 0
+[22:41:55] [Server thread/INFO]: Preparing spawn area: 7%
+[22:41:56] [Server thread/INFO]: Preparing spawn area: 13%
+[22:41:57] [Server thread/INFO]: Preparing spawn area: 24%
+[22:41:58] [Server thread/INFO]: Preparing spawn area: 42%
+[22:41:59] [Server thread/INFO]: Preparing spawn area: 55%
+[22:42:00] [Server thread/INFO]: Preparing spawn area: 72%
+[22:42:01] [Server thread/INFO]: Preparing spawn area: 93%
+[22:42:01] [Server thread/INFO]: Changing view distance to 4, from 10
+[22:42:02] [Netty Local Client IO #0/INFO]: [STDOUT]: Transformed Name: net.minecraft.client.entity.EntityOtherPlayerMP
+[22:42:02] [Netty Local Client IO #0/INFO]: [STDOUT]: MALMO: Found EntityOtherPlayerMP, attempting to transform it
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_MOD_READY
+[22:42:02] [Server thread/INFO]: [STDOUT]: CLIENT request state: WAITING_FOR_SERVER_READY
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_MOD_READY
+[22:42:02] [Netty Local Client IO #0/INFO]: Server protocol version 2
+[22:42:02] [Netty Server IO #1/INFO]: Client protocol version 2
+[22:42:02] [Netty Server IO #1/INFO]: Client attempting to join with 5 mods : minecraft@1.11.2,FML@8.0.99.99,malmomod@0.37.0,forge@13.20.1.2588,mcp@9.19
+[22:42:02] [Client thread/INFO]: [STDOUT]: CLIENT enter state: WAITING_FOR_SERVER_READY
+[22:42:02] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
+[22:42:02] [Server thread/INFO]: [Server thread] Server side modded connection established
+[22:42:02] [Server thread/INFO]: MineDojoAgent0[local:E:04d51e9b] logged in with entity id 567 at (-1.5, 64.0, 2.5)
+[22:42:02] [Server thread/INFO]: MineDojoAgent0 joined the game
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER request state: DORMANT
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: DORMANT
+[22:42:02] [Server thread/INFO]: [STDOUT]: INCOMING MISSION: Received MissionInit directly through ServerStateMachine constructor.
+[22:42:02] [Server thread/INFO]: [STDOUT]: Mission received: CombatMeta
+[22:42:02] [Server thread/INFO]: Received mission: §9CombatMeta
+[22:42:02] [Server thread/INFO]: Source: §alocalhost
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER request state: BUILDING_WORLD
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER enter state: BUILDING_WORLD
+[22:42:02] [Server thread/INFO]: [STDOUT]: SERVER request state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[22:42:03] [Client thread/INFO]: Mixing MixinRandomSkinTexture from mixins.overclocking.malmomod.json into net.minecraft.client.resources.DefaultPlayerSkin
+[22:42:03] [Server thread/INFO]: [STDOUT]: SERVER enter state: WAITING_FOR_AGENTS_TO_ASSEMBLE
+[22:42:03] [Server thread/INFO]: [STDOUT]: Experiment requires: 
+[22:42:03] [Server thread/INFO]: [STDOUT]: >>>> MineDojoAgent0
+[22:42:03] [Client thread/INFO]: [CHAT] Received mission: §9CombatMeta
+[22:42:03] [Client thread/INFO]: [CHAT] Source: §alocalhost
+[22:42:04] [Client thread/INFO]: [STDOUT]: ***Telling server we are ready - MineDojoAgent0
+[22:42:04] [Server thread/INFO]: [STDOUT]: Initializing player with username MineDojoAgent0 and agentname MineDojoAgent0
+[22:42:04] [Client thread/INFO]: [STDOUT]: CLIENT request state: RUNNING
+[22:42:04] [Client thread/INFO]: [STDOUT]: CLIENT enter state: RUNNING
+[22:42:04] [Client thread/INFO]: [STDOUT]: [LOGTOPY] On Mac OSX Catalina make sure to install this OpenJDK 1.8.0_152-release-1056-b12, this prevents the NSDragRegions crash
+[22:42:04] [Server thread/INFO]: [STDOUT]: SERVER request state: RUNNING
+[22:42:04] [Server thread/INFO]: [STDOUT]: SERVER enter state: RUNNING
+[22:42:04] [Client thread/INFO]: [STDOUT]: Resized the window
+[22:42:04] [Client thread/INFO]: [STDOUT]: Unpausing
+[22:42:06] [Server thread/INFO]: [MineDojoAgent0: Object successfully summoned]
+[22:42:06] [Client thread/INFO]: [CHAT] Object successfully summoned
+[22:42:06] [Server thread/INFO]: [MineDojoAgent0: Object successfully summoned]
+[22:42:07] [Server thread/INFO]: [MineDojoAgent0: Object successfully summoned]
+[22:42:07] [Client thread/INFO]: [CHAT] Object successfully summoned
+[22:42:08] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.

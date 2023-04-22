@@ -1,0 +1,13 @@
+INFO:root:Starting training
+DEBUG:minedojo.sim.bridge.mc_instance.instance.instance.4deca8:[22:40:08] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+INFO:watchdog:About to reap process tree of 23265:bash:/bin/bash i running, owner 23240, printing process tree status in termination order:
+INFO:watchdog:	-23375:java:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin/java i running, owner 23270
+INFO:root:Starting training
+DEBUG:minedojo.sim.bridge.mc_instance.instance.instance.11e47e:[22:42:08] [Server thread/INFO]: [STDOUT]: Warning: managed 5/20 ticks this second.
+INFO:watchdog:About to reap process tree of 23860:bash:/bin/bash i running, owner 23853, printing process tree status in termination order:
+INFO:watchdog:	-23865:java:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin/java i running, owner 23860
+INFO:watchdog:	-23860:bash:/bin/bash i running, owner 23853
+INFO:watchdog:Trying to SIGTERM 23865:java:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin/java i running, owner 23860
+INFO:watchdog:Process psutil.Process(pid=23865, name='java', status='terminated', started='22:40:52') terminated with exit code None
+INFO:watchdog:Trying to SIGTERM 23860:bash:/bin/bash i zombie, owner 23853
+INFO:watchdog:Process psutil.Popen(pid=23860, name='bash', status='terminated', exitcode=0, started='22:40:52') terminated with exit code 0
