@@ -1,17 +1,8 @@
 import numpy as np
-import itertools
-
-from torch import optim
-from tqdm import trange, tqdm
-import pandas as pd
-import sys
-from abc import ABC
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
-import matplotlib.pyplot as plt
-from PIL import Image
-import minedojo
 import torch
+from torch import optim
+from tqdm import tqdm
+import minedojo
 import torch.nn as nn
 from helpers.hunt_cow import HuntCowDenseRewardEnv
 import csv
