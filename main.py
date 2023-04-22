@@ -405,6 +405,8 @@ class ActorCritic(nn.Module):
 
 
     def forward(self, state):
+        if len(state) != self.C * self.H * self.W:
+            state = torch.zeros((1,1,41140)).to(self.device)
         state = state.view( self.C, self.H, self.W) # Reshape the input to (batch_size, C, H, W)
         print(f"Input state shape: {state.shape}")
         action_probs = [branch(state)[0] for branch in self.actor_branches]
