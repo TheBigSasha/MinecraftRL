@@ -15,14 +15,11 @@ if not torch.backends.mps.is_available():
     else:
         print("MPS not available because the current MacOS version is not 12.3+ "
               "and/or you do not have an MPS-enabled device on this machine.")
-
-
-
-
+device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REDUCED_ACTION_SPACE = True
 
 # IMAGE_SIZE = (142,255)
-IMAGE_SIZE = (160,256)
+IMAGE_SIZE = (160, 256)
 # env = minedojo.make("harvest_wool_with_shears_and_sheep", image_size=(160, 256) )
 env = HuntCowDenseRewardEnv(
     step_penalty=0.1,
@@ -33,6 +30,7 @@ env = HuntCowDenseRewardEnv(
 )
 act_space = env.action_space
 obs_space = env.observation_space
+
 
 def load_item_mapping_from_csv(file_path):
     item_mapping = {}
@@ -57,6 +55,7 @@ def load_item_mapping_from_csv(file_path):
             item_mapping[item_id] = item_id
     return item_mapping
 
+
 #
 # def minimizeIds(item_mapping):
 #     # minimizing IDs by replacing each items id with its index in the list
@@ -73,7 +72,9 @@ def load_item_mapping_from_csv(file_path):
 #     assert len(numeric_ids) == len(set(numeric_ids))
 
 string_to_index_mapping = load_item_mapping_from_csv("minecraft_items.csv")
-def preprocess_observation(obs_dict, space_dict = obs_space, string_to_index_mapping=string_to_index_mapping):
+
+
+def preprocess_observation(obs_dict, space_dict=obs_space, string_to_index_mapping=string_to_index_mapping):
     rgb = obs_dict['rgb']
     equipment = obs_dict['equipment']["name"]
     equipment_count = obs_dict['equipment']["quantity"]
@@ -114,7 +115,6 @@ def preprocess_observation(obs_dict, space_dict = obs_space, string_to_index_map
             for idx2, item in enumerate(row):
                 rgb_flattened[idx][idx2] = rgb_flattened[idx][idx2] << 8
                 rgb_flattened[idx][idx2] = rgb_flattened[idx][idx2] | item
-
 
     for row in rgb_flattened:
         for item in row:
@@ -168,7 +168,7 @@ def preprocess_observation(obs_dict, space_dict = obs_space, string_to_index_map
             for sub_sub_item in sub_item:
                 obs_list.append(sub_sub_item)
 
-    #Data type: numpy.float32
+    # Data type: numpy.float32
     # Shape: (6,)
     for item in cur_durability:
         obs_list.append(item)
@@ -222,35 +222,35 @@ def preprocess_observation(obs_dict, space_dict = obs_space, string_to_index_map
     #
     # obs_list.append(damage_amount)
 
-
-
     return np.array(obs_list, dtype=np.float32)
+
 
 input_shape = preprocess_observation(env.reset()).shape[0]
 num_actions = env.action_space.nvec.tolist()
-
-if REDUCED_ACTION_SPACE:
-    # Keep actions 0 -> 5
-    num_actions = env.action_space.nvec.tolist()[0:6]
+#
+# if REDUCED_ACTION_SPACE:
+#     # Keep actions 0 -> 5
+#     num_actions = env.action_space.nvec.tolist()[0:6]
 
 import logging
 
+
 def get_args_mask_for_func_action(fun_act_idx) -> str:
-    if(fun_act_idx == 0):
+    if (fun_act_idx == 0):
         return 'no-op'
-    elif(fun_act_idx == 1):
+    elif (fun_act_idx == 1):
         return 'use'
-    elif(fun_act_idx == 2):
+    elif (fun_act_idx == 2):
         return 'drop'
-    elif(fun_act_idx == 3):
+    elif (fun_act_idx == 3):
         return 'attack'
-    elif(fun_act_idx == 4):
+    elif (fun_act_idx == 4):
         return 'craft_smelt'
-    elif(fun_act_idx == 5):
+    elif (fun_act_idx == 5):
         return 'equip'
-    elif(fun_act_idx == 6):
+    elif (fun_act_idx == 6):
         return 'place'
-    elif(fun_act_idx == 7):
+    elif (fun_act_idx == 7):
         return 'destroy'
     else:
         return 'no-op'
@@ -260,9 +260,11 @@ def any_valid_arg(mask):
     # return true if any bool in mask is true, mask is 1d
     return np.any(mask)
 
+
 example_probs = [np.random.rand(3), np.random.rand(3), np.random.rand(4), np.random.rand(25), np.random.rand(25), np.random.rand(8), np.random.rand(244), np.random.rand(36)]
 
 example_probs = [torch.from_numpy(p) for p in example_probs]
+
 
 def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
     """
@@ -284,10 +286,22 @@ def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
     multidiscrete_tensor = [t.detach().cpu() for t in multidiscrete_tensor]
     # Create a list of zero-filled tensors with the same shapes as multidiscrete_tensor
     result = [torch.zeros_like(t) for t in example_probs]
+    for (i, t) in enumerate(multidiscrete_tensor):
+        for (j, p) in enumerate(t):
+            result[i][j] = p
 
+    # Apply func mask to index 5
+    func_mask = masks['action_type']
+    print(func_mask)
+    for i, is_enabled in enumerate(func_mask):
+        if is_enabled and i < len(multidiscrete_tensor[5]):
+            if i > 3 and any_valid_arg(masks[get_args_mask_for_func_action(i)]):
+                result[5][i] = multidiscrete_tensor[5][i] if not isRandom else np.random.uniform() + 0.5
+            elif i <= 3:
+                result[5][i] = multidiscrete_tensor[5][i] if not isRandom else np.random.uniform() + 0.5
 
-    for(i, t) in enumerate(multidiscrete_tensor):
-        for(j, p) in enumerate(t):
+    for (i, t) in enumerate(result):
+        for (j, p) in enumerate(t):
             if REDUCED_ACTION_SPACE:
                 if i == 5:
                     if j == 0:
@@ -300,16 +314,6 @@ def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
                     result[i][j] = p
             else:
                 result[i][j] = p
-
-    # Apply func mask to index 5
-    func_mask = masks['action_type']
-    print(func_mask)
-    for i, is_enabled in enumerate(func_mask):
-        if is_enabled and i < len(multidiscrete_tensor[5]):
-            if i > 3 and any_valid_arg(masks[get_args_mask_for_func_action(i)]):
-                result[5][i] = multidiscrete_tensor[5][i] if not isRandom else np.random.uniform() + 0.5
-            elif i <= 3:
-                result[5][i] = multidiscrete_tensor[5][i] if not isRandom else np.random.uniform() + 0.5
     print(len(result[5]))
     print(result[5])
 
@@ -320,7 +324,7 @@ def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
     print(args_mask)
     if args_mask[func_act.item()]:
         msk = masks[get_args_mask_for_func_action(func_act.item())]
-        idx_of_result_to_use = 6 if  get_args_mask_for_func_action(func_act.item()) == 'craft_smelt' else 7
+        idx_of_result_to_use = 6 if get_args_mask_for_func_action(func_act.item()) == 'craft_smelt' else 7
         for i, is_enabled in enumerate(msk):
             if idx_of_result_to_use < len(multidiscrete_tensor):
                 if i < len(multidiscrete_tensor[idx_of_result_to_use]):
@@ -335,7 +339,7 @@ def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
     for i, t in enumerate(result):
         result[i] = torch.argmax(t).item()
     logging.debug(f"Masked result: {result}")
-    if(env.action_space.contains(result)):
+    if (env.action_space.contains(result)):
         return result
     else:
         logging.debug(f"Masked result is not valid: {result}")
@@ -345,10 +349,18 @@ def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
     return result
 
 
+import torch.nn.functional as F
+
+def list_to_tensor(list):
+    if type(list) == list:
+        return torch.from_numpy(np.array(list)).float().to(device)
+    else:
+        return list
+
 class ActorCritic(nn.Module):
     def __init__(self, state_dim, action_dims):
         super(ActorCritic, self).__init__()
-        self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+        self.device = device
         # self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.actor_branches = nn.ModuleList().to(self.device)
         # Set the desired dimensions for reshaping
@@ -367,7 +379,7 @@ class ActorCritic(nn.Module):
                 nn.ReLU(),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
-                nn.Conv2d(128,1, kernel_size=3, stride=1, padding=1),
+                nn.Conv2d(128, 1, kernel_size=3, stride=1, padding=1),
                 nn.Flatten(),
                 nn.Flatten(),
                 nn.Linear(621, 256),
@@ -385,7 +397,7 @@ class ActorCritic(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2),
             nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.Conv2d(128,1, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(128, 1, kernel_size=3, stride=1, padding=1),
             nn.MaxPool2d(kernel_size=2, stride=2),
             nn.Flatten(),
             nn.Flatten(),
@@ -401,13 +413,11 @@ class ActorCritic(nn.Module):
                 nn.init.uniform_(m.weight, -0.1, 0.1)
                 nn.init.uniform_(m.bias, -0.1, 0.1)
 
-
-
-
     def forward(self, state):
-        if len(state) != self.C * self.H * self.W:
-            state = torch.zeros((1,1,41140)).to(self.device)
-        state = state.view( self.C, self.H, self.W) # Reshape the input to (batch_size, C, H, W)
+        if state.shape != (1, 1, 41140):
+            print(f"Wrong state shape: {state.shape}")
+            state = torch.zeros(41140).to(self.device)
+        state = state.view(self.C, self.H, self.W)  # Reshape the input to (batch_size, C, H, W)
         print(f"Input state shape: {state.shape}")
         action_probs = [branch(state)[0] for branch in self.actor_branches]
         for i, probs in enumerate(action_probs):
@@ -424,63 +434,64 @@ class ActorCritic(nn.Module):
         # Call mask_multidiscrete_probs to mask the action_probs
         for i, probs in enumerate(action_probs):
             print(f"probs: {probs.shape} at index {i}")
-        actions =  mask_apply(mask, action_probs, isRandom=choosing_randomly)
+        actions = mask_apply(mask, action_probs, isRandom=choosing_randomly)
         # Choose actions based on the masked action probabilities
         # actions = [np.argmax(masked_action_probs[i]) for i in range(len(masked_action_probs))]
         return actions
 
-
-
-    def train(self, transitions, gamma=0.99, critic_coeff=0.5, entropy_coeff=0.01):
-        states, actions_list, rewards, next_states, masks, dones = zip(*transitions)
-
-        actions = torch.tensor(actions_list, dtype=torch.long).to(self.device)
+    def train(self, transitions, gamma=0.99):
+        batch_size = len(transitions)
+        states, actions, rewards, next_states, masks, done_masks = zip(*transitions)
 
         states = torch.tensor(states, dtype=torch.float).to(self.device)
-        next_states = torch.tensor(next_states, dtype=torch.float).to(self.device)
-
+        actions = torch.tensor(actions, dtype=torch.long).to(self.device)
         rewards = torch.tensor(rewards, dtype=torch.float).to(self.device)
-        dones = torch.tensor(dones, dtype=torch.float).to(self.device)
+        next_states = torch.tensor(next_states, dtype=torch.float).to(self.device)
+        done_masks = torch.tensor(done_masks, dtype=torch.float).to(self.device)
 
-        # Calculate the discounted rewards
-        discounted_rewards = []
-        for i in range(len(rewards)):
-            Gt = 0
-            pw = 0
-            for r in rewards[i:]:
-                Gt = Gt + gamma**pw * r
-                pw = pw + 1
-            discounted_rewards.append(Gt)
-        discounted_rewards = torch.tensor(discounted_rewards, dtype=torch.float).to(self.device)
+        # Initialize lists for action_probs and state_values
+        action_probs_list = [[] for _ in range(len(self.actor_branches))]
+        state_values_list = []
 
-        # Calculate the advantage
-        _, critic_value = self.forward(states)
-        _, next_critic_value = self.forward(next_states)
-        advantage = discounted_rewards + gamma * next_critic_value.squeeze() * (1 - dones) - critic_value.squeeze()
+        # Loop through the batch to compute action probabilities and state values
+        for i in range(batch_size):
+            action_probs, state_value = self.forward(states[i].unsqueeze(0))
+            for j in range(len(self.actor_branches)):
+                action_probs_list[j].append(action_probs[j])
+            state_values_list.append(state_value)
 
-        # Calculate actor (policy) loss
-        action_probs, _ = self.forward(states)
-        actor_loss = 0
-        for i, action_prob in enumerate(action_probs):
-            log_probs = torch.log(action_prob)
-            log_probs = log_probs.gather(1, actions[:, i].unsqueeze(1))
-            actor_loss += (-log_probs * advantage.detach()).mean()
-        actor_loss /= len(action_probs)
+        # Concatenate lists into tensors
+        action_probs = [torch.stack(action_probs_list[j], dim=1) for j in range(len(self.actor_branches))]
+        state_values = torch.cat(state_values_list, dim=0)
 
-        # Calculate critic loss
-        _, critic_value = self.forward(states)
-        critic_loss = 0.5 * advantage.pow(2).mean()
+        # Calculate the next state values using the critic
+        next_state_values = []
+        for i in range(batch_size):
+            _, value = self.forward(next_states[i].unsqueeze(0))
+            next_state_values.append(value)
+        next_state_values = torch.cat(next_state_values, dim=0)
 
-        # Calculate entropy loss
-        action_probs, _ = self.forward(states)
-        entropy = 0
-        for action_prob in action_probs:
-            entropy += (-action_prob * torch.log(action_prob)).mean()
-        entropy_loss = -entropy_coeff * entropy
+        next_state_values = next_state_values * (1 - done_masks)
 
-        # Total loss
-        total_loss = actor_loss + critic_coeff * critic_loss + entropy_loss
+        # Calculate the expected state values
+        expected_state_values = rewards + (gamma * next_state_values)
 
+        # Calculate the value loss (MSE)
+        value_loss = F.mse_loss(state_values, expected_state_values.detach())
+
+        # Calculate the advantages
+        advantages = expected_state_values - state_values
+
+        # Calculate the action loss (negative log likelihood)
+        # Calculate the action loss (negative log likelihood)
+        action_loss = 0
+        for j in range(len(self.actor_branches)):
+            action_loss += -action_probs[j].gather(0, actions[:, j].view(1, -1)).squeeze() * advantages.detach()
+
+        # Calculate the total loss
+        total_loss = value_loss + action_loss.sum()
+
+        # Optimize the model
         self.optimizer.zero_grad()
         total_loss.backward()
         self.optimizer.step()
@@ -488,7 +499,7 @@ class ActorCritic(nn.Module):
 
 # log to file
 LOG_FILENAME = 'training.log'
-logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
 logging.info('Starting training')
 
 print(minedojo.tasks.ALL_PROGRAMMATIC_TASK_IDS)
@@ -497,71 +508,62 @@ print(f"Input shape: {input_shape} | Number of actions: {num_actions}")
 # print(f"CUDA: {torch.cuda.is_available()}")
 # print(f"Device: {torch.cuda.get_device_name(0)}")
 # print(f"Device count: {torch.cuda.device_count()}")
+example_act_tnsr = torch.from_numpy(env.action_space.no_op())
+example_act_tnsr = torch.zeros_like(example_act_tnsr)
 
 agent = ActorCritic(input_shape, num_actions)
 print(num_actions)
 
 batch_size = 1
-num_epochs = 1000*15*15
-max_episode_steps = 850
+num_epochs = 1000 * 15 * 15
+max_episode_steps = 400
 
-with tqdm(total=num_epochs*batch_size*max_episode_steps) as pbar:
+with tqdm(total=num_epochs * batch_size * max_episode_steps) as pbar:
     for epoch in range(num_epochs):
-            episode_rewards = []
-            print(f"Epoch: {epoch}")
+        episode_rewards = []
+        print(f"Epoch: {epoch}")
 
-            transitions = []
+        transitions = []
 
-            for episode in range(batch_size):
-                print(f"Episode: {episode}")
-                obs = env.reset()
-                state = preprocess_observation(obs)
-                done = False
-                episode_reward = 0
+        for episode in range(batch_size):
+            print(f"Episode: {episode}")
+            obs = env.reset()
+            state = preprocess_observation(obs)
+            done = False
+            episode_reward = 0
 
-                for step in range(max_episode_steps):
-                    pbar.update(1)
-                    masks = obs["masks"]
-                    print("chooosing action, stoooooooooge!")
-                    action = agent.choose_action(state, masks, epsilon=0.3)
-                    print(f"action: {[i for i in action]}")
-                    logging.info(f"action: {[i for i in action]}")
-                    logging.info(f"masks: {masks}")
-                    obs, reward, done, _ = env.step(action)
-                    base_reward = reward
-                    print(f"reward: {reward}")
-                    # entities, distances = obs["rays"]["entity_name"], obs["rays"]["entity_distance"]
-                    # sheep_idx = np.where(entities == "sheep")[0]
-                    #
-                    # if len(sheep_idx) > 0:
-                    #     sheep_distance = np.min(distances[sheep_idx])
-                    #     #encourage being closer to sheep
-                    #     if sheep_distance < 8:
-                    #         base_reward += 1 / (sheep_distance + 1)
+            for step in range(max_episode_steps):
+                pbar.update(1)
+                masks = obs["masks"]
+                print("chooosing action, stoooooooooge!")
+                action = agent.choose_action(state, masks, epsilon=0.3)
+                print(f"action: {[i for i in action]}")
+                logging.info(f"action: {[i for i in action]}")
+                logging.info(f"masks: {masks}")
+                obs, reward, done, _ = env.step(action)
+                base_reward = reward
+                print(f"reward: {reward}")
 
-                    next_state = preprocess_observation(obs)
+                next_state = preprocess_observation(obs)
 
-                    episode_reward += base_reward
-                    transitions.append((state, action, reward, next_state, masks, done))
+                episode_reward += base_reward
+                transitions.append((state, action, reward, next_state, masks, done))
 
-                    if done:
-                        pbar.update(max_episode_steps - step)
-                        break
+                if done:
+                    pbar.update(max_episode_steps - step)
+                    break
 
-                    state = next_state
+                state = next_state
 
-                episode_rewards.append(episode_reward)
+            episode_rewards.append(episode_reward)
 
-            # Train the agent using collected transitions
-            agent.train(transitions)
+        # Train the agent using collected transitions
+        agent.train(transitions)
 
-            mean_episode_reward = np.mean(episode_rewards)
-            torch.save(agent.state_dict(), f'model_{epoch}.pt')
-            logging.info(f"Epoch: {epoch+1}/{num_epochs}, Mean Reward: {mean_episode_reward:.2f}, Epsilon: {0.5/(epoch+1)}")
-            # print(f"Epoch: {epoch+1}/{num_epochs}, Mean Reward: {mean_episode_reward:.2f}")
+        mean_episode_reward = np.mean(episode_rewards)
+        torch.save(agent.state_dict(), f'model_{epoch}.pt')
+        logging.info(f"Epoch: {epoch + 1}/{num_epochs}, Mean Reward: {mean_episode_reward:.2f}, Epsilon: {0.5 / (epoch + 1)}")
+        # print(f"Epoch: {epoch+1}/{num_epochs}, Mean Reward: {mean_episode_reward:.2f}")
 
     # save the model
     torch.save(agent.state_dict(), 'model.pt')
-
-
-
