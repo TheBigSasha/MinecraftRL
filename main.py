@@ -7,6 +7,17 @@ import torch.nn as nn
 from helpers.hunt_cow import HuntCowDenseRewardEnv
 import csv
 
+# For m1 mac - MPS backend
+if not torch.backends.mps.is_available():
+    if not torch.backends.mps.is_built():
+        print("MPS not available because the current PyTorch install was not "
+              "built with MPS enabled.")
+    else:
+        print("MPS not available because the current MacOS version is not 12.3+ "
+              "and/or you do not have an MPS-enabled device on this machine.")
+
+
+
 
 REDUCED_ACTION_SPACE = True
 
@@ -337,7 +348,7 @@ def mask_apply(masks, multidiscrete_tensor, isRandom=False, returnProbs=False):
 class ActorCritic(nn.Module):
     def __init__(self, state_dim, action_dims):
         super(ActorCritic, self).__init__()
-        self.device = torch.device("cpu")
+        self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
         # self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.actor_branches = nn.ModuleList().to(self.device)
         # Set the desired dimensions for reshaping
