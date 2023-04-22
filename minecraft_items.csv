@@ -1,0 +1,749 @@
+acacia boat,Acacia Boat,447,0
+acacia door,Acacia Door,430,0
+acacia fence,Acacia Fence,192,0
+acacia fence gate,Acacia Fence Gate,187,0
+acacia stairs,Acacia Stairs,163,0
+activator rails,Activator Rails,157,0
+air,Air,0,0
+anvil,Anvil,145,0
+slightly damaged anvil,Slightly Damaged Anvil,145,1
+very damaged anvil,Very Damaged Anvil,145,2
+apple,Apple,260,0
+armor stand,Armor Stand,416,0
+arrow,Arrow,262,0
+baked potato,Baked Potato,393,0
+black banner,Black Banner,425,0
+red banner,Red Banner,425,1
+green banner,Green Banner,425,2
+brown banner,Brown Banner,425,3
+blue banner,Blue Banner,425,4
+purple banner,Purple Banner,425,5
+cyan banner,Cyan Banner,425,6
+light gray banner,Light Gray Banner,425,7
+gray banner,Gray Banner,425,8
+pink banner,Pink Banner,425,9
+lime banner,Lime Banner,425,10
+yellow banner,Yellow Banner,425,11
+light blue banner,Light Blue Banner,425,12
+magenta banner,Magenta Banner,425,13
+orange banner,Orange Banner,425,14
+white banner,White Banner,425,15
+barrier,Barrier,166,0
+beacon,Beacon,138,0
+red bed,Red Bed,355,0
+bedrock,Bedrock,7,0
+raw beef,Raw Beef,363,0
+beetroot,Beetroot,434,0
+beetroot seeds,Beetroot Seeds,435,0
+beetroot soup,Beetroot Soup,436,0
+birch boat,Birch Boat,445,0
+birch door,Birch Door,428,0
+birch fence,Birch Fence,189,0
+birch fence gate,Birch Fence Gate,184,0
+birch stairs,Birch Stairs,135,0
+black shulker box,Black Shulker Box,234,0
+blaze powder,Blaze Powder,377,0
+blaze rod,Blaze Rod,369,0
+blue shulker box,Blue Shulker Box,230,0
+oak boat,Oak Boat,333,0
+bone,Bone,352,0
+bone block,Bone Block,216,0
+book,Book,340,0
+bookshelf,Bookshelf,47,0
+bow,Bow,261,0
+bowl,Bowl,281,0
+bread,Bread,297,0
+brewing stand,Brewing Stand,379,0
+brick,Brick,336,0
+bricks,Bricks,45,0
+brick stairs,Brick Stairs,108,0
+brown mushroom,Brown Mushroom,39,0
+brown mushroom block,Brown Mushroom Block,99,0
+brown shulker box,Brown Shulker Box,231,0
+bucket,Bucket,325,0
+cactus,Cactus,81,0
+cake,Cake,354,0
+white carpet,White Carpet,171,0
+orange carpet,Orange Carpet,171,1
+magenta carpet,Magenta Carpet,171,2
+light blue carpet,Light Blue Carpet,171,3
+yellow carpet,Yellow Carpet,171,4
+lime carpet,Lime Carpet,171,5
+pink carpet,Pink Carpet,171,6
+gray carpet,Gray Carpet,171,7
+light gray carpet,Light Gray Carpet,171,8
+cyan carpet,Cyan Carpet,171,9
+purple carpet,Purple Carpet,171,10
+blue carpet,Blue Carpet,171,11
+brown carpet,Brown Carpet,171,12
+green carpet,Green Carpet,171,13
+red carpet,Red Carpet,171,14
+black carpet,Black Carpet,171,15
+carrot,Carrot,391,0
+carrot on a stick,Carrot on a Stick,398,0
+cauldron,Cauldron,380,0
+chain command block,Chain Command Block,211,0
+chain boots,Chain Boots,305,0
+chain chestplate,Chain Chestplate,303,0
+chain helmet,Chain Helmet,302,0
+chain leggings,Chain Leggings,304,0
+chest,Chest,54,0
+minecart with chest,Minecart with Chest,342,0
+raw chicken,Raw Chicken,365,0
+chorus flower,Chorus Flower,200,0
+chorus fruit,Chorus Fruit,432,0
+popped chorus fruit,Popped Chorus Fruit,433,0
+chorus plant,Chorus Plant,199,0
+clay block,Clay Block,82,0
+clay ball,Clay Ball,337,0
+clock,Clock,347,0
+coal,Coal,263,0
+charcoal,Charcoal,263,1
+coal block,Coal Block,173,0
+coal ore,Coal Ore,16,0
+cobblestone,Cobblestone,4,0
+cobblestone wall,Cobblestone Wall,139,0
+mossy cobblestone wall,Mossy Cobblestone Wall,139,1
+command block,Command Block,137,0
+minecart with command block,Minecart with Command Block,422,0
+redstone comparator,Redstone Comparator,404,0
+compass,Compass,345,0
+steak,Steak,364,0
+cooked chicken,Cooked Chicken,366,0
+cooked fish,Cooked Fish,350,0
+cooked salmon,Cooked Salmon,350,1
+cooked mutton,Cooked Mutton,424,0
+cooked porkchop,Cooked Porkchop,320,0
+cooked rabbit,Cooked Rabbit,412,0
+cookie,Cookie,357,0
+crafting table,Crafting Table,58,0
+cyan shulker box,Cyan Shulker Box,228,0
+dark oak boat,Dark Oak Boat,448,0
+dark oak door,Dark Oak Door,431,0
+dark oak fence,Dark Oak Fence,191,0
+dark oak fence gate,Dark Oak Fence Gate,186,0
+dark oak stairs,Dark Oak Stairs,164,0
+daylight detector,Daylight Detector,151,0
+dead bush,Dead Bush,32,0
+detector rails,Detector Rails,28,0
+diamond,Diamond,264,0
+diamond axe,Diamond Axe,279,0
+block of diamond,Block of Diamond,57,0
+diamond boots,Diamond Boots,313,0
+diamond chestplate,Diamond Chestplate,311,0
+diamond helmet,Diamond Helmet,310,0
+diamond hoe,Diamond Hoe,293,0
+diamond horse armor,Diamond Horse Armor,419,0
+diamond leggings,Diamond Leggings,312,0
+diamond ore,Diamond Ore,56,0
+diamond pickaxe,Diamond Pickaxe,278,0
+diamond shovel,Diamond Shovel,277,0
+diamond sword,Diamond Sword,276,0
+dirt,Dirt,3,0
+coarse dirt,Coarse Dirt,3,1
+podzol,Podzol,3,2
+dispenser,Dispenser,23,0
+sunflower,Sunflower,175,0
+lilac,Lilac,175,1
+tall grass,Tall Grass,175,2
+large fern,Large Fern,175,3
+rose bush,Rose Bush,175,4
+peony,Peony,175,5
+dragon's breath,Dragon's Breath,437,0
+dragon egg,Dragon Egg,122,0
+dropper,Dropper,158,0
+ink sac,Ink Sac,351,0
+red dye,Red Dye,351,1
+green dye,Green Dye,351,2
+cocoa beans,Cocoa Beans,351,3
+lapis lazuli,Lapis Lazuli,351,4
+purple dye,Purple Dye,351,5
+cyan dye,Cyan Dye,351,6
+light gray dye,Light Gray Dye,351,7
+gray dye,Gray Dye,351,8
+pink dye,Pink Dye,351,9
+lime dye,Lime Dye,351,10
+yellow dye,Yellow Dye,351,11
+light blue dye,Light Blue Dye,351,12
+magenta dye,Magenta Dye,351,13
+orange dye,Orange Dye,351,14
+bone meal,Bone Meal,351,15
+egg,Egg,344,0
+elytra,Elytra,443,0
+emerald,Emerald,388,0
+block of emerald,Block of Emerald,133,0
+emerald ore,Emerald Ore,129,0
+enchanted book,Enchanted Book,403,0
+enchanting table,Enchanting Table,116,0
+end stone bricks,End Stone Bricks,206,0
+end crystal,End Crystal,426,0
+end portal frame,End Portal Frame,120,0
+end rod,End Rod,198,0
+end stone,End Stone,121,0
+ender chest,Ender Chest,130,0
+eye of ender,Eye of Ender,381,0
+ender pearl,Ender Pearl,368,0
+bottle o'enchanting,Bottle o'Enchanting,384,0
+farmland,Farmland,60,0
+feather,Feather,288,0
+oak fence,Oak Fence,85,0
+oak fence gate,Oak Fence Gate,107,0
+fermented spider eye,Fermented Spider Eye,376,0
+map (filled),,358,0
+fire charge,Fire Charge,385,0
+firework star,,402,0
+firework rocket,Firework Rocket,401,0
+raw fish,Raw Fish,349,0
+raw salmon,Raw Salmon,349,1
+tropical fish (clownfish),Tropical Fish (Clownfish),349,2
+pufferfish,Pufferfish,349,3
+fishing rod,Fishing Rod,346,0
+flint,Flint,318,0
+flint and steel,Flint and Steel,259,0
+flower pot,Flower Pot,390,0
+furnace,Furnace,61,0
+minecart with furnace,Minecart with Furnace,343,0
+ghast tear,Ghast Tear,370,0
+glass,Glass,20,0
+glass bottle,Glass Bottle,374,0
+glass pane,Glass Pane,102,0
+glowstone,Glowstone,89,0
+glowstone dust,Glowstone Dust,348,0
+block of gold,Block of Gold,41,0
+gold ingot,Gold Ingot,266,0
+gold nugget,Gold Nugget,371,0
+gold ore,Gold Ore,14,0
+golden apple,Golden Apple,322,0
+enchanted golden apple,Enchanted Golden Apple,322,1
+golden axe,Golden Axe,286,0
+golden boots,Golden Boots,317,0
+golden carrot,Golden Carrot,396,0
+golden chestplate,Golden Chestplate,315,0
+golden helmet,Golden Helmet,314,0
+golden hoe,Golden Hoe,294,0
+gold horse armor,Gold Horse Armor,418,0
+golden leggings,Golden Leggings,316,0
+golden pickaxe,Golden Pickaxe,285,0
+powered rails,Powered Rails,27,0
+golden shovel,Golden Shovel,284,0
+golden sword,Golden Sword,283,0
+grass block,Grass Block,2,0
+dirt path,Dirt Path,208,0
+gravel,Gravel,13,0
+gray shulker box,Gray Shulker Box,226,0
+green shulker box,Green Shulker Box,232,0
+gunpowder,Gunpowder,289,0
+terracotta,Terracotta,172,0
+hay bale,Hay Bale,170,0
+heavy weighted pressure plate,Heavy Weighted Pressure Plate,148,0
+hopper,Hopper,154,0
+minecart with hopper,Minecart with Hopper,408,0
+ice,Ice,79,0
+iron axe,Iron Axe,258,0
+iron bars,Iron Bars,101,0
+block of iron,Block of Iron,42,0
+iron boots,Iron Boots,309,0
+iron chestplate,Iron Chestplate,307,0
+iron door,Iron Door,330,0
+iron helmet,Iron Helmet,306,0
+iron hoe,Iron Hoe,292,0
+iron horse armor,Iron Horse Armor,417,0
+iron ingot,Iron Ingot,265,0
+iron leggings,Iron Leggings,308,0
+iron nugget,Iron Nugget,452,0
+iron ore,Iron Ore,15,0
+iron pickaxe,Iron Pickaxe,257,0
+iron shovel,Iron Shovel,256,0
+iron sword,Iron Sword,267,0
+iron trapdoor,Iron Trapdoor,167,0
+item frame,Item Frame,389,0
+jukebox,Jukebox,84,0
+jungle boat,Jungle Boat,446,0
+jungle door,Jungle Door,429,0
+jungle fence,Jungle Fence,190,0
+jungle fence gate,Jungle Fence Gate,185,0
+jungle stairs,Jungle Stairs,136,0
+ladder,Ladder,65,0
+lapis lazuli block,Lapis Lazuli Block,22,0
+lapis lazuli ore,Lapis Lazuli Ore,21,0
+lava,Lava,,0
+lava bucket,Lava Bucket,327,0
+lead,Lead,420,0
+leather,Leather,334,0
+leather boots,Leather Boots,301,0
+leather tunic,Leather Tunic,299,0
+leather cap,Leather Cap,298,0
+leather pants,Leather Pants,300,0
+oak leaves,Oak Leaves,18,0
+spruce leaves,Spruce Leaves,18,1
+birch leaves,Birch Leaves,18,2
+jungle leaves,Jungle Leaves,18,3
+acacia leaves,Acacia Leaves,161,0
+dark oak leaves,Dark Oak Leaves,161,1
+lever,Lever,69,0
+light blue shulker box,Light Blue Shulker Box,222,0
+light weighted pressure plate,Light Weighted Pressure Plate,147,0
+lime shulker box,Lime Shulker Box,224,0
+lingering potion of fire resistance (0:45),Lingering Potion of Fire Resistance (0:45),441,0
+lingering potion of fire resistance (2:00),Lingering Potion of Fire Resistance (2:00),441,0
+lingering potion of harming (instant damage ii),Lingering Potion of Harming (Instant Damage II),441,0
+lingering potion of harming (instant damage),Lingering Potion of Harming (Instant Damage),441,0
+lingering potion of healing (instant health ii),Lingering Potion of Healing (Instant Health II),441,0
+lingering potion of healing (instant health),Lingering Potion of Healing (Instant Health),441,0
+lingering potion of invisibility (0:45),Lingering Potion of Invisibility (0:45),441,0
+lingering potion of invisibility (2:00),Lingering Potion of Invisibility (2:00),441,0
+lingering potion of leaping (0:22 - jump boost ii),Lingering Potion of Leaping (0:22 - Jump Boost II),441,0
+lingering potion of leaping (0:45 - jump boost),Lingering Potion of Leaping (0:45 - Jump Boost),441,0
+lingering potion of leaping (2:00 - jump boost),Lingering Potion of Leaping (2:00 - Jump Boost),441,0
+lingering potion of luck (1:15),Lingering Potion of Luck (1:15),441,0
+lingering potion of night vision (0:45),Lingering Potion of Night Vision (0:45),441,0
+lingering potion of night vision (2:00),Lingering Potion of Night Vision (2:00),441,0
+lingering potion of poison (0:05 - poison ii),Lingering Potion of Poison (0:05 - Poison II),441,0
+lingering potion of poison (0:11),Lingering Potion of Poison (0:11),441,0
+lingering potion of poison (0:22),Lingering Potion of Poison (0:22),441,0
+lingering potion of regeneration (0:05 - regeneration ii),Lingering Potion of Regeneration (0:05 - Regeneration II),441,0
+lingering potion of regeneration (0:11),Lingering Potion of Regeneration (0:11),441,0
+lingering potion of regeneration (0:22),Lingering Potion of Regeneration (0:22),441,0
+lingering potion of slowness (0:22),Lingering Potion of Slowness (0:22),441,0
+lingering potion of slowness (1:00),Lingering Potion of Slowness (1:00),441,0
+lingering potion of strength (0:22 - strength ii),Lingering Potion of Strength (0:22 - Strength II),441,0
+lingering potion of strength (0:45),Lingering Potion of Strength (0:45),441,0
+lingering potion of strength (2:00),Lingering Potion of Strength (2:00),441,0
+lingering potion of swiftness (0:22 - speed ii),Lingering Potion of Swiftness (0:22 - Speed II),441,0
+lingering potion of swiftness (0:45 - speed),Lingering Potion of Swiftness (0:45 - Speed),441,0
+lingering potion of swiftness (2:00 - speed),Lingering Potion of Swiftness (2:00 - Speed),441,0
+lingering potion of water breathing (0:45),Lingering Potion of Water Breathing (0:45),441,0
+lingering potion of water breathing (2:00),Lingering Potion of Water Breathing (2:00),441,0
+lingering potion of weakness (0:22),Lingering Potion of Weakness (0:22),441,0
+lingering potion of weakness (1:00),Lingering Potion of Weakness (1:00),441,0
+jack o'lantern,Jack o'Lantern,91,0
+oak log,Oak Log,17,0
+spruce log,Spruce Log,17,1
+birch log,Birch Log,17,2
+jungle log,Jungle Log,17,3
+acacia log,Acacia Log,162,0
+dark oak log,Dark Oak Log,162,1
+magenta shulker box,Magenta Shulker Box,221,0
+magma block,Magma Block,213,0
+magma cream,Magma Cream,378,0
+map,Map,395,0
+melon slice,Melon Slice,360,0
+block of melon,Block of Melon,103,0
+melon seeds,Melon Seeds,362,0
+milk bucket,Milk Bucket,335,0
+minecart,Minecart,328,0
+monster spawner,Monster Spawner,52,0
+infested stone,Infested Stone,97,0
+infested cobblestone,Infested Cobblestone,97,1
+infested stone bricks,Infested Stone Bricks,97,2
+infested mossy stone bricks,Infested Mossy Stone Bricks,97,3
+infested cracked stone bricks,Infested Cracked Stone Bricks,97,4
+infested chiseled stone bricks,Infested Chiseled Stone Bricks,97,5
+mossy cobblestone,Mossy Cobblestone,48,0
+mushroom stew,Mushroom Stew,282,0
+raw mutton,Raw Mutton,423,0
+mycelium,Mycelium,110,0
+name tag,Name Tag,421,0
+block of nether bricks,Block of Nether Bricks,112,0
+nether brick fence,Nether Brick Fence,113,0
+nether brick stairs,Nether Brick Stairs,114,0
+nether star,Nether Star,399,0
+nether wart,Nether Wart,372,0
+nether wart block,Nether Wart Block,214,0
+nether brick,Nether Brick,405,0
+netherrack,Netherrack,87,0
+note block,Note Block,25,0
+oak stairs,Oak Stairs,53,0
+observer,Observer,218,0
+obsidian,Obsidian,49,0
+orange shulker box,Orange Shulker Box,220,0
+packed ice,Packed Ice,174,0
+painting,Painting,321,0
+paper,Paper,339,0
+pink shulker box,Pink Shulker Box,225,0
+piston,Piston,33,0
+oak planks,Oak Planks,5,0
+spruce planks,Spruce Planks,5,1
+birch planks,Birch Planks,5,2
+jungle planks,Jungle Planks,5,3
+acacia planks,Acacia Planks,5,4
+dark oak planks,Dark Oak Planks,5,5
+poisonous potato,Poisonous Potato,394,0
+raw porkchop,Raw Porkchop,319,0
+potato,Potato,392,0
+potion of fire resistance (3:00),Potion of Fire Resistance (3:00),373,0
+potion of fire resistance (8:00),Potion of Fire Resistance (8:00),373,0
+potion of harming (instant damage ii),Potion of Harming (Instant Damage II),373,0
+potion of harming (instant damage),Potion of Harming (Instant Damage),373,0
+potion of healing (instant health ii),Potion of Healing (Instant Health II),373,0
+potion of healing (instant health),Potion of Healing (Instant Health),373,0
+potion of invisibility (3:00),Potion of Invisibility (3:00),373,0
+potion of invisibility (8:00),Potion of Invisibility (8:00),373,0
+potion of leaping (1:30 - jump boost ii),Potion of Leaping (1:30 - Jump Boost II),373,0
+potion of leaping (3:00 - jump boost),Potion of Leaping (3:00 - Jump Boost),373,0
+potion of leaping (8:00 - jump boost),Potion of Leaping (8:00 - Jump Boost),373,0
+potion of luck (5:00),Potion of Luck (5:00),373,0
+potion of night vision (3:00),Potion of Night Vision (3:00),373,0
+potion of night vision (8:00),Potion of Night Vision (8:00),373,0
+potion of poison (0:22 - poison ii),Potion of Poison (0:22 - Poison II),373,0
+potion of poison (0:45),Potion of Poison (0:45),373,0
+potion of poison (2:00),Potion of Poison (2:00),373,0
+potion of regeneration (0:22 - regeneration ii),Potion of Regeneration (0:22 - Regeneration II),373,0
+potion of regeneration (0:45),Potion of Regeneration (0:45),373,0
+potion of regeneration (1:30),Potion of Regeneration (1:30),373,0
+potion of slowness (1:30),Potion of Slowness (1:30),373,0
+potion of slowness (4:00),Potion of Slowness (4:00),373,0
+potion of strength (1:30 - strength ii),Potion of Strength (1:30 - Strength II),373,0
+potion of strength (3:00),Potion of Strength (3:00),373,0
+potion of strength (8:00),Potion of Strength (8:00),373,0
+potion of swiftness (1:30 - speed ii),Potion of Swiftness (1:30 - Speed II),373,0
+potion of swiftness (3:00 - speed),Potion of Swiftness (3:00 - Speed),373,0
+potion of swiftness (8:00 - speed),Potion of Swiftness (8:00 - Speed),373,0
+potion of water breathing (3:00),Potion of Water Breathing (3:00),373,0
+potion of water breathing (8:00),Potion of Water Breathing (8:00),373,0
+potion of weakness (1:30),Potion of Weakness (1:30),373,0
+potion of weakness (4:00),Potion of Weakness (4:00),373,0
+water bottle,Water Bottle,373,0
+prismarine,Prismarine,168,0
+prismarine bricks,Prismarine Bricks,168,1
+dark prismarine,Dark Prismarine,168,2
+prismarine crystals,Prismarine Crystals,410,0
+prismarine shard,Prismarine Shard,409,0
+pumpkin,Pumpkin,86,0
+pumpkin pie,Pumpkin Pie,400,0
+pumpkin seeds,Pumpkin Seeds,361,0
+purple shulker box,Purple Shulker Box,229,0
+purpur block,Purpur Block,201,0
+purpur pillar,Purpur Pillar,202,0
+purpur slab,Purpur Slab,205,0
+purpur stairs,Purpur Stairs,203,0
+nether quartz,Nether Quartz,406,0
+block of quartz,Block of Quartz,155,0
+chiseled quartz block,Chiseled Quartz Block,155,1
+quartz pillar,Quartz Pillar,155,2
+nether quartz ore,Nether Quartz Ore,153,0
+quartz stairs,Quartz Stairs,156,0
+raw rabbit,Raw Rabbit,411,0
+rabbit's foot,Rabbit's Foot,414,0
+rabbit hide,Rabbit Hide,415,0
+rabbit stew,Rabbit Stew,413,0
+rails,Rails,66,0
+music disc (c418 - 11),Music Disc (C418 - 11),2266,0
+music disc (c418 - 13),Music Disc (C418 - 13),2256,0
+music disc (c418 - blocks),Music Disc (C418 - blocks),2258,0
+music disc (c418 - cat),Music Disc (C418 - cat),2257,0
+music disc (c418 - chirp),Music Disc (C418 - chirp),2259,0
+music disc (c418 - far),Music Disc (C418 - far),2260,0
+music disc (c418 - mall),Music Disc (C418 - mall),2261,0
+music disc (c418 - mellohi),Music Disc (C418 - mellohi),2262,0
+music disc (c418 - stal),Music Disc (C418 - stal),2263,0
+music disc (c418 - strad),Music Disc (C418 - strad),2264,0
+music disc (c418 - wait),Music Disc (C418 - wait),2267,0
+music disc (c418 - ward),Music Disc (C418 - ward),2265,0
+poppy,Poppy,38,0
+blue orchid,Blue Orchid,38,1
+allium,Allium,38,2
+azure bluet,Azure Bluet,38,3
+red tulip,Red Tulip,38,4
+orange tulip,Orange Tulip,38,5
+white tulip,White Tulip,38,6
+pink tulip,Pink Tulip,38,7
+oxeye daisy,Oxeye Daisy,38,8
+red mushroom,Red Mushroom,40,0
+red mushroom block,Red Mushroom Block,100,0
+red nether brick,Red Nether Brick,215,0
+red sandstone,Red Sandstone,179,0
+chiseled red sandstone,Chiseled Red Sandstone,179,1
+smooth red sandstone,Smooth Red Sandstone,179,2
+red sandstone stairs,Red Sandstone Stairs,180,0
+red shulker box,Red Shulker Box,233,0
+redstone dust,Redstone Dust,331,0
+block of redstone,Block of Redstone,152,0
+redstone lamp,Redstone Lamp,123,0
+redstone ore,Redstone Ore,73,0
+redstone torch,Redstone Torch,76,0
+sugar canes,Sugar Canes,338,0
+redstone repeater,Redstone Repeater,356,0
+repeating command block,Repeating Command Block,210,0
+rotten flesh,Rotten Flesh,367,0
+saddle,Saddle,329,0
+sand,Sand,12,0
+red sand,Red Sand,12,1
+sandstone,Sandstone,24,0
+chiseled sandstone,Chiseled Sandstone,24,1
+smooth sandstone,Smooth Sandstone,24,2
+sandstone stairs,Sandstone Stairs,128,0
+oak sapling,Oak Sapling,6,0
+spruce sapling,Spruce Sapling,6,1
+birch sapling,Birch Sapling,6,2
+jungle sapling,Jungle Sapling,6,3
+acacia sapling,Acacia Sapling,6,4
+dark oak sapling,Dark Oak Sapling,6,5
+sea lantern,Sea Lantern,169,0
+shears,Shears,359,0
+shield,Shield,442,0
+shulker shell,Shulker Shell,450,0
+oak sign,Oak Sign,323,0
+light gray shulker box,Light Gray Shulker Box,227,0
+skeleton skull,Skeleton Skull,397,0
+wither skeleton skull,Wither Skeleton Skull,397,1
+zombie head,Zombie Head,397,2
+player head,Player Head,397,3
+creeper head,Creeper Head,397,4
+dragon head,Dragon Head,397,5
+slime block,Slime Block,165,0
+slimeball,Slimeball,341,0
+snow block,Snow Block,80,0
+snow,Snow,78,0
+snowball,Snowball,332,0
+soul sand,Soul Sand,88,0
+bat spawn egg,Bat Spawn Egg,383,0
+blaze spawn egg,Blaze Spawn Egg,383,0
+cave spider spawn egg,Cave Spider Spawn Egg,383,0
+chicken spawn egg,Chicken Spawn Egg,383,0
+cow spawn egg,Cow Spawn Egg,383,0
+creeper spawn egg,Creeper Spawn Egg,383,0
+donkey spawn egg,Donkey Spawn Egg,383,0
+elder guardian spawn egg,Elder Guardian Spawn Egg,383,0
+enderman spawn egg,Enderman Spawn Egg,383,0
+endermite spawn egg,Endermite Spawn Egg,383,0
+evoker spawn egg,Evoker Spawn Egg,383,0
+ghast spawn egg,Ghast Spawn Egg,383,0
+guardian spawn egg,Guardian Spawn Egg,383,0
+horse spawn egg,Horse Spawn Egg,383,0
+husk spawn egg,Husk Spawn Egg,383,0
+llama spawn egg,Llama Spawn Egg,383,0
+magma cube spawn egg,Magma Cube Spawn Egg,383,0
+mooshroom spawn egg,Mooshroom Spawn Egg,383,0
+mule spawn egg,Mule Spawn Egg,383,0
+ocelot spawn egg,Ocelot Spawn Egg,383,0
+pig spawn egg,Pig Spawn Egg,383,0
+polar bear spawn egg,Polar Bear Spawn Egg,383,0
+rabbit spawn egg,Rabbit Spawn Egg,383,0
+sheep spawn egg,Sheep Spawn Egg,383,0
+shulker spawn egg,Shulker Spawn Egg,383,0
+silverfish spawn egg,Silverfish Spawn Egg,383,0
+skeleton horse spawn egg,Skeleton Horse Spawn Egg,383,0
+skeleton spawn egg,Skeleton Spawn Egg,383,0
+slime spawn egg,Slime Spawn Egg,383,0
+spider spawn egg,Spider Spawn Egg,383,0
+squid spawn egg,Squid Spawn Egg,383,0
+stray spawn egg,Stray Spawn Egg,383,0
+vex spawn egg,Vex Spawn Egg,383,0
+villager spawn egg,Villager Spawn Egg,383,0
+vindicator spawn egg,Vindicator Spawn Egg,383,0
+witch spawn egg,Witch Spawn Egg,383,0
+wither skeleton spawn egg,Wither Skeleton Spawn Egg,383,0
+wolf spawn egg,Wolf Spawn Egg,383,0
+zombie horse spawn egg,Zombie Horse Spawn Egg,383,0
+zombie spawn egg,Zombie Spawn Egg,383,0
+zombie villager spawn egg,Zombie Villager Spawn Egg,383,0
+zombified piglin spawn egg,Zombified Piglin Spawn Egg,383,0
+glistering melon slice,Glistering Melon Slice,382,0
+spectral arrow,Spectral Arrow,439,0
+spider eye,Spider Eye,375,0
+splash potion of fire resistance (3:00/2:15),Splash Potion of Fire Resistance (3:00/2:15),438,0
+splash potion of fire resistance (6:00),Splash Potion of Fire Resistance (6:00),438,0
+splash potion of harming (instant damage ii),Splash Potion of Harming (Instant Damage II),438,0
+splash potion of harming (instant damage),Splash Potion of Harming (Instant Damage),438,0
+splash potion of healing (instant health ii),Splash Potion of Healing (Instant Health II),438,0
+splash potion of healing (instant health),Splash Potion of Healing (Instant Health),438,0
+splash potion of invisibility (3:00/2:15),Splash Potion of Invisibility (3:00/2:15),438,0
+splash potion of invisibility (8:00/6:00),Splash Potion of Invisibility (8:00/6:00),438,0
+splash potion of leaping (1:30/1:07 - jump boost ii),Splash Potion of Leaping (1:30/1:07 - Jump Boost II),438,0
+splash potion of leaping (3:00/2:15 - jump boost),Splash Potion of Leaping (3:00/2:15 - Jump Boost),438,0
+splash potion of leaping (8:00/6:00 - jump boost),Splash Potion of Leaping (8:00/6:00 - Jump Boost),438,0
+splash potion of luck (5:00),Splash Potion of Luck (5:00),438,0
+splash potion of night vision (3:00/2:15),Splash Potion of Night Vision (3:00/2:15),438,0
+splash potion of night vision (8:00/6:00),Splash Potion of Night Vision (8:00/6:00),438,0
+splash potion of poison (0:22/0:16 - poison ii),Splash Potion of Poison (0:22/0:16 - Poison II),438,0
+splash potion of poison (0:45/0:33),Splash Potion of Poison (0:45/0:33),438,0
+splash potion of poison (1:30),Splash Potion of Poison (1:30),438,0
+splash potion of regeneration (0:22/0:16 - regeneration ii),Splash Potion of Regeneration (0:22/0:16 - Regeneration II),438,0
+splash potion of regeneration (0:45/0:33),Splash Potion of Regeneration (0:45/0:33),438,0
+splash potion of regeneration (1:30),Splash Potion of Regeneration (1:30),438,0
+splash potion of slowness (1:30/1:07),Splash Potion of Slowness (1:30/1:07),438,0
+splash potion of slowness (4:00/3:00),Splash Potion of Slowness (4:00/3:00),438,0
+splash potion of strength (1:30/1:07 - strength ii),Splash Potion of Strength (1:30/1:07 - Strength II),438,0
+splash potion of strength (3:00/2:15),Splash Potion of Strength (3:00/2:15),438,0
+splash potion of strength (8:00/6:00),Splash Potion of Strength (8:00/6:00),438,0
+splash potion of swiftness (1:30/1:07 - speed ii),Splash Potion of Swiftness (1:30/1:07 - Speed II),438,0
+splash potion of swiftness (3:00/2:15 - speed),Splash Potion of Swiftness (3:00/2:15 - Speed),438,0
+splash potion of swiftness (8:00/6:00 - speed),Splash Potion of Swiftness (8:00/6:00 - Speed),438,0
+splash potion of water breathing (3:00/2:15),Splash Potion of Water Breathing (3:00/2:15),438,0
+splash potion of water breathing (8:00/6:00),Splash Potion of Water Breathing (8:00/6:00),438,0
+splash potion of weakness (1:30/1:07),Splash Potion of Weakness (1:30/1:07),438,0
+splash potion of weakness (4:00/3:00),Splash Potion of Weakness (4:00/3:00),438,0
+sponge,Sponge,19,0
+wet sponge,Wet Sponge,19,1
+spruce boat,Spruce Boat,444,0
+spruce door,Spruce Door,427,0
+spruce fence,Spruce Fence,188,0
+spruce fence gate,Spruce Fence Gate,183,0
+spruce stairs,Spruce Stairs,134,0
+white stained glass,White Stained Glass,95,0
+orange stained glass,Orange Stained Glass,95,1
+magenta stained glass,Magenta Stained Glass,95,2
+light blue stained glass,Light Blue Stained Glass,95,3
+yellow stained glass,Yellow Stained Glass,95,4
+lime stained glass,Lime Stained Glass,95,5
+pink stained glass,Pink Stained Glass,95,6
+gray stained glass,Gray Stained Glass,95,7
+light gray stained glass,Light Gray Stained Glass,95,8
+cyan stained glass,Cyan Stained Glass,95,9
+purple stained glass,Purple Stained Glass,95,10
+blue stained glass,Blue Stained Glass,95,11
+brown stained glass,Brown Stained Glass,95,12
+green stained glass,Green Stained Glass,95,13
+red stained glass,Red Stained Glass,95,14
+black stained glass,Black Stained Glass,95,15
+white stained glass pane,White Stained Glass Pane,160,0
+orange stained glass pane,Orange Stained Glass Pane,160,1
+magenta stained glass pane,Magenta Stained Glass Pane,160,2
+light blue stained glass pane,Light Blue Stained Glass Pane,160,3
+yellow stained glass pane,Yellow Stained Glass Pane,160,4
+lime stained glass pane,Lime Stained Glass Pane,160,5
+pink stained glass pane,Pink Stained Glass Pane,160,6
+gray stained glass pane,Gray Stained Glass Pane,160,7
+light gray stained glass pane,Light Gray Stained Glass Pane,160,8
+cyan stained glass pane,Cyan Stained Glass Pane,160,9
+purple stained glass pane,Purple Stained Glass Pane,160,10
+blue stained glass pane,Blue Stained Glass Pane,160,11
+brown stained glass pane,Brown Stained Glass Pane,160,12
+green stained glass pane,Green Stained Glass Pane,160,13
+red stained glass pane,Red Stained Glass Pane,160,14
+black stained glass pane,Black Stained Glass Pane,160,15
+white terracotta,White Terracotta,159,0
+orange terracotta,Orange Terracotta,159,1
+magenta terracotta,Magenta Terracotta,159,2
+light blue terracotta,Light Blue Terracotta,159,3
+yellow terracotta,Yellow Terracotta,159,4
+lime terracotta,Lime Terracotta,159,5
+pink terracotta,Pink Terracotta,159,6
+gray terracotta,Gray Terracotta,159,7
+light gray terracotta,Light Gray Terracotta,159,8
+cyan terracotta,Cyan Terracotta,159,9
+purple terracotta,Purple Terracotta,159,10
+blue terracotta,Blue Terracotta,159,11
+brown terracotta,Brown Terracotta,159,12
+green terracotta,Green Terracotta,159,13
+red terracotta,Red Terracotta,159,14
+black terracotta,Black Terracotta,159,15
+stick,Stick,280,0
+sticky piston,Sticky Piston,29,0
+stone,Stone,1,0
+granite,Granite,1,1
+polished granite,Polished Granite,1,2
+diorite,Diorite,1,3
+polished diorite,Polished Diorite,1,4
+andesite,Andesite,1,5
+polished andesite,Polished Andesite,1,6
+stone axe,Stone Axe,275,0
+stone brick stairs,Stone Brick Stairs,109,0
+stone button,Stone Button,77,0
+stone hoe,Stone Hoe,291,0
+stone pickaxe,Stone Pickaxe,274,0
+stone pressure plate,Stone Pressure Plate,70,0
+stone shovel,Stone Shovel,273,0
+stone slab,Stone Slab,44,0
+sandstone slab,Sandstone Slab,44,1
+cobblestone slab,Cobblestone Slab,44,3
+brick slab,Brick Slab,44,4
+stone brick slab,Stone Brick Slab,44,5
+nether brick slab,Nether Brick Slab,44,6
+quartz slab,Quartz Slab,44,7
+red sandstone slab,Red Sandstone Slab,182,0
+cobblestone stairs,Cobblestone Stairs,67,0
+stone sword,Stone Sword,272,0
+stone bricks,Stone Bricks,98,0
+mossy stone bricks,Mossy Stone Bricks,98,1
+cracked stone bricks,Cracked Stone Bricks,98,2
+chiseled stone bricks,Chiseled Stone Bricks,98,3
+string,String,287,0
+structure block,Structure Block,255,0
+structure void,Structure Void,217,0
+sugar,Sugar,353,0
+grass,Grass,31,1
+fern,Fern,31,2
+arrow of fire resistance (0:22),Arrow of Fire Resistance (0:22),440,0
+arrow of fire resistance (1:00),Arrow of Fire Resistance (1:00),440,0
+arrow of harming (instant damage ii),Arrow of Harming (Instant Damage II),440,0
+arrow of harming (instant damage),Arrow of Harming (Instant Damage),440,0
+arrow of healing (instant health ii),Arrow of Healing (Instant Health II),440,0
+arrow of healing (instant health),Arrow of Healing (Instant Health),440,0
+arrow of invisibility (0:22),Arrow of Invisibility (0:22),440,0
+arrow of invisibility (1:00),Arrow of Invisibility (1:00),440,0
+arrow of leaping (0:11 - jump boost ii),Arrow of Leaping (0:11 - Jump Boost II),440,0
+arrow of leaping (0:22 - jump boost),Arrow of Leaping (0:22 - Jump Boost),440,0
+arrow of leaping (1:00 - jump boost),Arrow of Leaping (1:00 - Jump Boost),440,0
+arrow of luck (0:37),Arrow of Luck (0:37),440,0
+arrow of night vision (0:22),Arrow of Night Vision (0:22),440,0
+arrow of night vision (1:00),Arrow of Night Vision (1:00),440,0
+arrow of poison (0:02 - poison ii),Arrow of Poison (0:02 - Poison II),440,0
+arrow of poison (0:05),Arrow of Poison (0:05),440,0
+arrow of poison (0:11),Arrow of Poison (0:11),440,0
+arrow of regeneration (0:02 - regeneration ii),Arrow of Regeneration (0:02 - Regeneration II),440,0
+arrow of regeneration (0:05),Arrow of Regeneration (0:05),440,0
+arrow of regeneration (0:11),Arrow of Regeneration (0:11),440,0
+arrow of slowness (0:11),Arrow of Slowness (0:11),440,0
+arrow of slowness (0:30),Arrow of Slowness (0:30),440,0
+arrow of strength (0:11 - strength ii),Arrow of Strength (0:11 - Strength II),440,0
+arrow of strength (0:22),Arrow of Strength (0:22),440,0
+arrow of strength (1:00),Arrow of Strength (1:00),440,0
+arrow of swiftness (0:11 - speed ii),Arrow of Swiftness (0:11 - Speed II),440,0
+arrow of swiftness (0:22 - speed),Arrow of Swiftness (0:22 - Speed),440,0
+arrow of swiftness (1:00 - speed),Arrow of Swiftness (1:00 - Speed),440,0
+arrow of water breathing (0:22),Arrow of Water Breathing (0:22),440,0
+arrow of water breathing (1:00),Arrow of Water Breathing (1:00),440,0
+arrow of weakness (0:11),Arrow of Weakness (0:11),440,0
+arrow of weakness (0:30),Arrow of Weakness (0:30),440,0
+tnt,TNT,46,0
+minecart with tnt,Minecart with TNT,407,0
+torch,Torch,50,0
+totem of undying,Totem of Undying,449,0
+oak trapdoor,Oak Trapdoor,96,0
+trapped chest,Trapped Chest,146,0
+tripwire hook,Tripwire Hook,131,0
+vines,Vines,106,0
+water,Water,,0
+water bucket,Water Bucket,326,0
+lily pad,Lily Pad,111,0
+cobweb,Cobweb,30,0
+wheat,Wheat,296,0
+seeds,Seeds,295,0
+wheat seeds,Wheat Seeds,295,0
+white shulker box,White Shulker Box,219,0
+wooden axe,Wooden Axe,271,0
+oak button,Oak Button,143,0
+oak door,Oak Door,324,0
+wooden hoe,Wooden Hoe,290,0
+wooden pickaxe,Wooden Pickaxe,270,0
+oak pressure plate,Oak Pressure Plate,72,0
+wooden shovel,Wooden Shovel,269,0
+oak slab,Oak Slab,126,0
+spruce slab,Spruce Slab,126,1
+birch slab,Birch Slab,126,2
+jungle slab,Jungle Slab,126,3
+acacia slab,Acacia Slab,126,4
+dark oak slab,Dark Oak Slab,126,5
+wooden sword,Wooden Sword,268,0
+white wool,White Wool,35,0
+orange wool,Orange Wool,35,1
+magenta wool,Magenta Wool,35,2
+light blue wool,Light Blue Wool,35,3
+yellow wool,Yellow Wool,35,4
+lime wool,Lime Wool,35,5
+pink wool,Pink Wool,35,6
+gray wool,Gray Wool,35,7
+light gray wool,Light Gray Wool,35,8
+cyan wool,Cyan Wool,35,9
+purple wool,Purple Wool,35,10
+blue wool,Blue Wool,35,11
+brown wool,Brown Wool,35,12
+green wool,Green Wool,35,13
+red wool,Red Wool,35,14
+black wool,Black Wool,35,15
+book and quill,Book and Quill,386,0
+written book,Written Book,387,0
+dandelion,Dandelion,37,0
+yellow shulker box,Yellow Shulker Box,223,0

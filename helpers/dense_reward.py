@@ -6,7 +6,6 @@ from collections import deque
 import numpy as np
 from gym import Wrapper
 
-
 class AnimalZooDenseRewardWrapper(Wrapper):
     def __init__(
             self,

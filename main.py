@@ -14,6 +14,8 @@ import minedojo
 import torch
 import torch.nn as nn
 from helpers.hunt_cow import HuntCowDenseRewardEnv
+import csv
+
 
 REDUCED_ACTION_SPACE = True
 
@@ -479,30 +481,28 @@ class ActorCritic(nn.Module):
         total_loss.backward()
         self.optimizer.step()
 
-import csv
 
-if __name__ == "main":
-    # log to file
-    LOG_FILENAME = 'training.log'
-    logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-    logging.info('Starting training')
+# log to file
+LOG_FILENAME = 'training.log'
+logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+logging.info('Starting training')
 
-    print(minedojo.tasks.ALL_PROGRAMMATIC_TASK_IDS)
-    print(env.action_space.no_op())
-    print(f"Input shape: {input_shape} | Number of actions: {num_actions}")
-    print(f"CUDA: {torch.cuda.is_available()}")
-    print(f"Device: {torch.cuda.get_device_name(0)}")
-    print(f"Device count: {torch.cuda.device_count()}")
+print(minedojo.tasks.ALL_PROGRAMMATIC_TASK_IDS)
+print(env.action_space.no_op())
+print(f"Input shape: {input_shape} | Number of actions: {num_actions}")
+print(f"CUDA: {torch.cuda.is_available()}")
+print(f"Device: {torch.cuda.get_device_name(0)}")
+print(f"Device count: {torch.cuda.device_count()}")
 
-    agent = ActorCritic(input_shape, num_actions)
-    print(num_actions)
+agent = ActorCritic(input_shape, num_actions)
+print(num_actions)
 
-    batch_size = 1
-    num_epochs = 1000*15*15
-    max_episode_steps = 850
+batch_size = 1
+num_epochs = 1000*15*15
+max_episode_steps = 850
 
-    with tqdm(total=num_epochs*batch_size*max_episode_steps) as pbar:
-        for epoch in range(num_epochs):
+with tqdm(total=num_epochs*batch_size*max_episode_steps) as pbar:
+    for epoch in range(num_epochs):
             episode_rewards = []
             print(f"Epoch: {epoch}")
 
