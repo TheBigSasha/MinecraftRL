@@ -6,7 +6,7 @@ import gym
 from stable_baselines3 import PPO
 
 
-num_cpu = 1
+num_cpu = 10
 env = SubprocVecEnv([multiproc(i) for i in range(num_cpu)], start_method='fork')
 # env = VecEnvWrapper(env)
 env = VecFrameStack(env, n_stack=8)  # frame stacking for temporal information
