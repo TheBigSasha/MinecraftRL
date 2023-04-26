@@ -5,7 +5,7 @@ import minedojo
 from minedojo.sim.inventory import InventoryItem
 import numpy as np
 
-from .dense_reward import AnimalZooDenseRewardWrapper
+from helpers.dense_reward import AnimalZooDenseRewardWrapper
 
 
 class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
@@ -66,7 +66,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
         self._elapsed_steps = 0
         self._first_reset = True
 
-    def reset(self, **kwargs):
+    def reset(self, onadd, **kwargs):
         self._elapsed_steps = 0
 
         if not self._first_reset:
@@ -76,10 +76,17 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
             self.unwrapped.set_weather("clear")
         self._first_reset = False
 
-        return super().reset(**kwargs)
+        return super().reset(onadd=onadd, **kwargs)
 
-    def step(self, action):
-        obs, reward, done, info = super().step(action)
+    def step(self, action, onadd):
+        base_action = [0,  0,  0, 12, 12,  0,  0,  0]
+        for i, a in enumerate(action):
+            if i == 5:
+                base_action[5] = 0 if a == 0 else 3
+            else:
+                base_action[i] = a
+        action = base_action
+        obs, reward, done, info = super().step(action, onadd)
         self._elapsed_steps += 1
         if self._elapsed_steps >= self._episode_len:
             done = True
