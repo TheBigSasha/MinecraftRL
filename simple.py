@@ -1,16 +1,34 @@
 from stable_baselines3.common.vec_env import SubprocVecEnv, VecFrameStack
-
+from stable_baselines3.common.callbacks import CallbackList, EvalCallback
 from helpers.minedojo_hunt_cow_gymnasium_wrapper import get_openai_env, multiproc
 import sys
 import gym
 from stable_baselines3 import PPO
+import minedojo
+from helpers.recordvideo import VideoRecorderCallback
 
+env = minedojo.make(
+    task_id="harvest_wool_with_shears_and_sheep",
+    image_size=(160, 256)
+)
+obs = env.reset()
+for i in range(2):
+    act = env.action_space.no_op()
+    act[0] = 1    # forward/backward
+    if i % 10 == 0:
+        act[2] = 1    # jump
+    obs, reward, done, info = env.step(act)
+env.close()
 
-num_cpu = 10
+num_cpu = 8
 env = SubprocVecEnv([multiproc(i) for i in range(num_cpu)], start_method='fork')
 # env = VecEnvWrapper(env)
 env = VecFrameStack(env, n_stack=8)  # frame stacking for temporal information
+eval_env =SubprocVecEnv([multiproc(num_cpu + 5)], start_method='fork')
+eval_env = VecFrameStack(eval_env, 8)
 
+
+# env = multiproc(0)()
 # Our action space:
 # 0: move forward/back (0: noop, 1: forward, 2: backward)
 # 1: turn left/right (0: noop, 1: left, 2: right)
@@ -20,30 +38,16 @@ env = VecFrameStack(env, n_stack=8)  # frame stacking for temporal information
 # 5: attack (0: noop, 1: attack)
 
 # Train the model using PPO2
-model = PPO("CnnPolicy", env, verbose=1, tensorboard_log="./ppo2_minedojo_tensorboard/")
+log_freq = 3000
+modelname = "PPO_CNN"
+game = "MINECRAFT_HUNT_COW_DENSE"
+log_path = "./logs"
 
-model.learn(total_timesteps=9000, log_interval=10, tb_log_name="first_run")
+vrcb=VideoRecorderCallback(eval_env, render_freq=log_freq, deterministic=True, modelname=f"{modelname}{game}")
+callback = CallbackList([vrcb,  EvalCallback(eval_env, best_model_save_path=f"{log_path}{modelname}{game}best_model",
+                                log_path=f"{log_path}{modelname}results", eval_freq=log_freq, render=False)])
+
+model = PPO("CnnPolicy", env, verbose=1, tensorboard_log="./logs/mcPPO/")
+
+model.learn(total_timesteps=100000, log_interval=10, tb_log_name="minecraft")
 model.save("ppo2_multidiscrete")
-
-# Load the model and enjoy the trained agent
-del model
-model = PPO.load("ppo2_multidiscrete")
-
-model.set_env(env)
-model.learn(total_timesteps=25000, log_interval=10, tb_log_name="second_run")
-model.save("ppo2_multidiscrete_2")
-
-del model
-model = PPO.load("ppo2_multidiscrete_2")
-model.set_env(env)
-model.learn(total_timesteps=100000, log_interval=10, tb_log_name="third_run")
-model.save("ppo2_multidiscrete_3")
-
-del model
-model = PPO.load("ppo2_multidiscrete_3")
-
-obs = env.reset()
-while True:
-    action, _states = model.predict(obs)
-    obs, rewards, dones, info = env.step(action)
-    env.render()

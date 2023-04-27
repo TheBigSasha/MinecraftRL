@@ -6,17 +6,17 @@ import gym
 from stable_baselines3 import PPO
 
 # Create the custom environment
-# Cls_env = get_openai_env(
-#     step_penalty=0.1,
-#     nav_reward_scale=2,
-#     attack_reward=10,
-#     success_reward=100,
-#     image_size=(128, 180),
-# )
-#
-# env = Cls_env()
+Cls_env = get_openai_env(
+    step_penalty=0.1,
+    nav_reward_scale=2,
+    attack_reward=10,
+    success_reward=100,
+    image_size=(128, 180),
+)
+
+env = Cls_env()
 num_cpu = 1
-env = multiproc(0)
+# env = multiproc(0)
 # env = SubprocVecEnv([multiproc(i) for i in range(num_cpu)], start_method='fork')
 # env = VecFrameStack(env, n_stack=8)  # frame stacking for temporal information
 
