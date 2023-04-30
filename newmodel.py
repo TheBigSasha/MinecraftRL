@@ -1,3 +1,6 @@
+from torch import nn
+
+
 class ActorCritic(nn.Module):
     def __init__(self, state_dim, action_dim):
         super(ActorCritic, self).__init__()
