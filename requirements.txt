@@ -1,5 +1,5 @@
 gym
-stable_baselines3[extra]
 gymnasium
 minedojo
-pyyaml
+jupyterlab
+stable_baselines3[extra]

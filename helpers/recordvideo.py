@@ -57,7 +57,7 @@ class VideoRecorderCallback(BaseCallback):
         # See https://pytorch.org/docs/stable/tensorboard.html
         # for supported formats
         self.logger.record("trajectory/image", Image(image, "HWC"), exclude=("stdout",  "csv"))
-        if self._cnt_stps % self._render_freq == 0:
+        # if self._cnt_stps % self._render_freq == 0:
             # screens = []
 
             # def grab_screens(_locals: Dict[str, Any], _globals: Dict[str, Any]) -> None:
@@ -80,8 +80,8 @@ class VideoRecorderCallback(BaseCallback):
             # )
             # clip = Video(torch.ByteTensor([screens]), fps=40)
             # np.save(f"./videos/video_{self.num_timesteps}_{self.model_name}.npy", clip)
-            print(f"Saving model at {self.num_timesteps}")
-            self.model.save(f"./models/model_{self.num_timesteps}_{self.model_name}.zip")
+            # print(f"Saving model at {self.num_timesteps}")
+            # self.model.save(f"./models/model_{self.num_timesteps}_{self.model_name}.zip")
 
             # self.logger.record(
             #     "trajectory/video",
@@ -109,7 +109,6 @@ class VideoRecorderCallback(BaseCallback):
             "hparams",
             HParam(hparam_dict, metric_dict),
             exclude=("stdout", "log", "json", "csv"),
-
         )
     
 
