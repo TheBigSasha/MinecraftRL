@@ -1,0 +1,11 @@
+2023-04-25 21:21:49 Sashas-MacBook-Pro.local watchdog[4447] INFO Watchdog started between parent 4297 and child 4313
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO Parent is not running, hence we need terminate the child.
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO About to reap process tree of 4313:bash:/bin/bash i running, owner 1, printing process tree status in termination order:
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO 	-4434:java:/Users/sasha/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/bin/java i running, owner 4360
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO 	-4360:java:/Users/sasha/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/bin/java i running, owner 4313
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO 	-4313:bash:/bin/bash i running, owner 1
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO Trying to SIGTERM 4434:java:/Users/sasha/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/bin/java i running, owner 4360
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO Process psutil.Process(pid=4434, name='java', status='terminated', started='21:21:44') terminated with exit code None
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO Trying to SIGTERM 4360:java:/Users/sasha/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/bin/java i running, owner 4313
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO Process psutil.Process(pid=4360, name='java', status='terminated', started='21:21:42') terminated with exit code None
+2023-04-25 21:21:55 Sashas-MacBook-Pro.local watchdog[4447] INFO Process psutil.Process(pid=4313, name='bash', status='terminated', started='21:21:42') does not exist or is zombie.

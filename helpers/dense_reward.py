@@ -38,7 +38,7 @@ class AnimalZooDenseRewardWrapper(Wrapper):
         self.observation_space = gym.spaces.Box(low=0, high=255,
                                                 shape=(3, image_size[0], image_size[1]), dtype=np.uint8)
 
-    def reset(self, onadd, seed=None, **kwargs):
+    def reset(self, onadd=lambda x: print(x), seed=None, **kwargs):
         self._weapon_durability_deque.clear()
         self._consecutive_distances.clear()
         self._distance_min = np.inf
@@ -56,7 +56,7 @@ class AnimalZooDenseRewardWrapper(Wrapper):
 
         return preprocess_observation(obs, self.string_item_map)
 
-    def step(self, action, onadd):
+    def step(self, action, onadd=lambda x: print(x)):
         obs, _reward, done, info = super().step(action)
 
         self._weapon_durability_deque.append(obs["inventory"]["cur_durability"][0])

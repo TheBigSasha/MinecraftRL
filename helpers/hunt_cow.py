@@ -66,7 +66,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
         self._elapsed_steps = 0
         self._first_reset = True
 
-    def reset(self, onadd, **kwargs):
+    def reset(self, onadd=lambda x: print(x), **kwargs):
         self._elapsed_steps = 0
 
         if not self._first_reset:
@@ -78,7 +78,7 @@ class HuntCowDenseRewardEnv(AnimalZooDenseRewardWrapper):
 
         return super().reset(onadd=onadd, **kwargs)
 
-    def step(self, action, onadd):
+    def step(self, action, onadd=lambda x: print(x)):
         base_action = [0,  0,  0, 12, 12,  0,  0,  0]
         for i, a in enumerate(action):
             if i == 5:
